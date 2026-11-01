@@ -65,10 +65,11 @@ export const MEME_GALLERY = [
 
 export const SOCIAL_LINKS = {
   website: 'https://surchi.xyz',
-  x: 'https://x.com/surchi_xyz',
-  discord: 'https://discord.gg/surchi',
-  github: 'https://github.com/surchi-intelligence',
+  x: 'https://x.com/Sur2027',
+  discord: 'https://discord.gg/uH2Jp3yu5h',
+  github: 'https://github.com/surchiai',
   solscan: 'https://solscan.io/token/SURCHi1111111111111111111111111111111111111',
   raydium: 'https://raydium.io/swap/?inputMint=sol&outputMint=SURCHi1111111111111111111111111111111111111',
   email: 'info@surchi.xyz',
 };
+
