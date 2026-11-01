@@ -37,13 +37,13 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Mascot Photo - Meeting Side-by-Side of Website with Container Completely Removed */}
+      {/* Mascot Photo - Spanning Side-by-Side of Website with Container Completely Removed */}
       <div className="relative w-full flex items-end justify-center select-none px-0 mt-3 sm:mt-6 z-10">
-        <div className="w-full max-w-[360px] sm:max-w-[460px] md:max-w-[540px] lg:max-w-[620px] aspect-[3/4] relative overflow-hidden select-none flex items-end justify-center">
+        <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl aspect-[3/4] max-h-[70vh] sm:max-h-[78vh] relative overflow-hidden select-none flex items-end justify-center">
           <img
             src="/images/surchi_hero_toshi.jpg"
             alt="SURCHI Mascot"
-            className="w-full h-full object-cover object-bottom select-none pointer-events-none"
+            className="w-full h-full object-cover sm:object-contain object-bottom select-none pointer-events-none"
           />
         </div>
       </div>

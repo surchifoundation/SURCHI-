@@ -67,13 +67,13 @@ export const CommunityCulture: React.FC = () => {
 
       </div>
 
-      {/* Featured Videos (Meeting Side-by-Side Across Website, Auto-playing continuously without controls) */}
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 mb-16 sm:mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+      {/* Featured Videos (Spanning Side-by-Side Across Entire Website Just Like Header Section) */}
+      <div className="relative w-full select-none px-0 mb-16 sm:mb-24 overflow-hidden">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 sm:gap-1 md:gap-2 lg:gap-3">
           {FEATURED_VIDEOS.map((video, idx) => (
             <div
               key={idx}
-              className="w-full aspect-[9/16] relative overflow-hidden select-none group"
+              className="w-full aspect-[9/16] max-h-[75vh] sm:max-h-[82vh] relative overflow-hidden select-none flex items-center justify-center"
             >
               <video
                 ref={(el) => {
