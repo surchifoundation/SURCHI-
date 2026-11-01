@@ -28,10 +28,10 @@ export const TokenInfo: React.FC = () => {
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block matching User Reference */}
-        <div className="mb-10 sm:mb-14">
+        <div className="mb-10 sm:mb-14 lg:mb-16">
           <p className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] uppercase text-white/80 mb-3">
             THE FACTS
           </p>

@@ -145,7 +145,7 @@ export const DogsFamily: React.FC = () => {
         </div>
 
         {/* Floating Bobble Icons - Pure Round Bobbles, No Outer Container Box */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-10 max-w-5xl mx-auto py-6">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto py-6">
           {DOGS_FAMILY.map((dog, idx) => {
             // Stagger animation timing for playful floating bubble motion
             const bobbleDelay = `${(idx % 6) * 0.4}s`;
@@ -168,7 +168,7 @@ export const DogsFamily: React.FC = () => {
                     animation: `bobbleFloat ${bobbleDuration} ease-in-out infinite alternate`,
                     animationDelay: bobbleDelay,
                   }}
-                  className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-300 transform group-hover:scale-125 select-none focus:outline-none ${
+                  className={`relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-300 transform group-hover:scale-125 select-none focus:outline-none ${
                     dog.isSurchi
                       ? 'ring-4 ring-[#00F7FF] ring-offset-4 ring-offset-[#05070B] shadow-[0_0_30px_rgba(0,247,255,0.7)]'
                       : 'shadow-[0_10px_25px_rgba(0,0,0,0.6)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]'

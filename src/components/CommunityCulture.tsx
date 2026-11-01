@@ -67,18 +67,19 @@ export const CommunityCulture: React.FC = () => {
 
       </div>
 
-      {/* Featured Videos Only (Stretched Side-by-Side Across Website, Auto-playing continuously without controls) */}
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 mb-16 sm:mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-8 justify-items-center">
+      {/* Featured Videos (Meeting Side-by-Side Across Website, Auto-playing continuously without controls) */}
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
           {FEATURED_VIDEOS.map((video, idx) => (
             <div
               key={idx}
-              className="w-full max-w-[450px] lg:max-w-none aspect-[9/16] relative overflow-hidden select-none group"
+              className="w-full aspect-[9/16] relative overflow-hidden select-none group"
             >
               <video
                 ref={(el) => {
                   videoRefs.current[idx] = el;
                 }}
+                src={video.src}
                 autoPlay
                 loop
                 muted
