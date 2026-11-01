@@ -1,17 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Copy, Check, Send, ExternalLink, ArrowDown } from 'lucide-react';
 import { TOKEN_DETAILS, SOCIAL_LINKS } from '../data/surchiData';
+import { setupContinuousAutoplay } from '../utils/videoAutoplay';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(() => {});
-    }
+    const cleanup = setupContinuousAutoplay(videoRef.current);
+    return cleanup;
   }, []);
 
   const handleCopy = () => {
@@ -61,7 +59,16 @@ export const Hero: React.FC = () => {
             loop
             muted
             playsInline
+            preload="auto"
+            controls={false}
             disablePictureInPicture
+            disableRemotePlayback
+            {...({
+              'webkit-playsinline': 'true',
+              'x5-playsinline': 'true',
+              'x5-video-player-type': 'h5',
+              'x-webkit-airplay': 'deny',
+            } as any)}
             className="w-full h-full object-cover object-center select-none pointer-events-none"
           >
             <source src="/assets/aistudio/InShot_20261101_050647975_de6ffdc4.mp4" type="video/mp4" />

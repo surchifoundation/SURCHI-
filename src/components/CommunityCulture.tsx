@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { SOCIAL_LINKS, TOKEN_DETAILS } from '../data/surchiData';
-import { Download, Check, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { setupContinuousAutoplay } from '../utils/videoAutoplay';
 
 export const CommunityCulture: React.FC = () => {
-  const [downloadedItem, setDownloadedItem] = useState<string | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const FEATURED_VIDEOS = [
@@ -25,53 +25,12 @@ export const CommunityCulture: React.FC = () => {
   ];
 
   useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      if (video) {
-        video.defaultMuted = true;
-        video.muted = true;
-        video.play().catch(() => {});
-      }
-    });
+    const cleanups = videoRefs.current.map((video) => setupContinuousAutoplay(video));
+    return () => {
+      cleanups.forEach((cleanup) => cleanup && cleanup());
+    };
   }, []);
 
-  const handleDownload = async (title: string, mediaUrl: string, isVideo = true) => {
-    const ext = isVideo ? 'mp4' : 'jpg';
-    const filename = `${title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.${ext}`;
-
-    try {
-      // 1. Fetch media as Blob directly
-      const response = await fetch(mediaUrl);
-      if (!response.ok) throw new Error('Network response was not ok');
-      const blob = await response.blob();
-
-      // 2. Create object URL for clean native download
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      setTimeout(() => {
-        window.URL.revokeObjectURL(blobUrl);
-      }, 1500);
-
-      setDownloadedItem(title);
-      setTimeout(() => setDownloadedItem(null), 2500);
-    } catch (err) {
-      console.warn('Direct fetch download fallback:', err);
-      const link = document.createElement('a');
-      link.href = mediaUrl;
-      link.download = filename;
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setDownloadedItem(title);
-      setTimeout(() => setDownloadedItem(null), 2500);
-    }
-  };
 
   return (
     <section id="memes" className="relative w-full bg-[#0B1018] text-white py-20 md:py-32 border-b border-white/10 overflow-hidden">
@@ -124,7 +83,16 @@ export const CommunityCulture: React.FC = () => {
                 loop
                 muted
                 playsInline
+                preload="auto"
+                controls={false}
                 disablePictureInPicture
+                disableRemotePlayback
+                {...({
+                  'webkit-playsinline': 'true',
+                  'x5-playsinline': 'true',
+                  'x5-video-player-type': 'h5',
+                  'x-webkit-airplay': 'deny',
+                } as any)}
                 className="w-full h-full object-cover object-center select-none pointer-events-none"
               >
                 <source src={video.src} type="video/mp4" />
@@ -132,20 +100,6 @@ export const CommunityCulture: React.FC = () => {
                   <source key={sIdx} src={sourceUrl} type="video/mp4" />
                 ))}
               </video>
-
-              {/* Floating Icon-Only Download Button */}
-              <button
-                onClick={() => handleDownload(video.title, video.src, true)}
-                aria-label={`Download ${video.title} Video`}
-                title={`Download ${video.title} Video`}
-                className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white text-[#0052FF] hover:bg-[#00F7FF] hover:text-[#05070B] transition-all flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 active:scale-95 z-10"
-              >
-                {downloadedItem === video.title ? (
-                  <Check className="w-5 h-5 text-[#0052FF]" />
-                ) : (
-                  <Download className="w-5 h-5" />
-                )}
-              </button>
             </div>
           ))}
         </div>
