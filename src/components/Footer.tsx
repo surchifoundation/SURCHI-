@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/public/assets/aistudio/surchi_logo_bb05a571.png"
+                src="/assets/aistudio/surchi_logo_bb05a571.png"
                 alt="SURCHI Logo"
                 className="w-10 h-10 rounded-xl object-cover shadow-lg"
               />

@@ -9,18 +9,18 @@ export const CommunityCulture: React.FC = () => {
   const FEATURED_VIDEOS = [
     {
       title: 'SURCHI River Walk',
-      src: '/public/assets/aistudio/InShot_20261031_220635396_791c5c19.mp4',
-      altSources: ['/assets/aistudio/InShot_20261031_220635396_791c5c19.mp4', '/videos/surchi_walk.mp4'],
+      src: '/assets/aistudio/InShot_20261031_220635396_791c5c19.mp4',
+      altSources: ['/videos/surchi_walk.mp4'],
     },
     {
       title: 'SURCHI Park Walk',
-      src: '/public/assets/aistudio/InShot_20261031_220830348_ddd7e932.mp4',
-      altSources: ['/assets/aistudio/InShot_20261031_220830348_ddd7e932.mp4', '/videos/surchi_park.mp4'],
+      src: '/assets/aistudio/InShot_20261031_220830348_ddd7e932.mp4',
+      altSources: ['/videos/surchi_park.mp4'],
     },
     {
       title: 'SURCHI Flower Meadow',
-      src: '/public/assets/aistudio/InShot_20261101_004340859_2a5fc1d4.mp4',
-      altSources: ['/assets/aistudio/InShot_20261101_004340859_2a5fc1d4.mp4', '/videos/surchi_flowers.mp4'],
+      src: '/assets/aistudio/InShot_20261101_004340859_2a5fc1d4.mp4',
+      altSources: ['/videos/surchi_flowers.mp4'],
     },
   ];
 

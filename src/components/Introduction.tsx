@@ -48,7 +48,6 @@ export const Introduction: React.FC = () => {
             className="w-full h-full object-cover object-center select-none pointer-events-none"
           >
             <source src="/assets/aistudio/InShot_20261031_214032618_63a3b783.mp4" type="video/mp4" />
-            <source src="/public/assets/aistudio/InShot_20261031_214032618_63a3b783.mp4" type="video/mp4" />
             <source src="/videos/surchi_lore.mp4" type="video/mp4" />
           </video>
         </div>
