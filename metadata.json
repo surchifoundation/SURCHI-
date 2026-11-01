@@ -1,0 +1,6 @@
+{
+  "name": "SURCHI — Intelligence Beyond the Market",
+  "description": "SURCHI ($SUR) — The iconic, community-driven meme token on Solana. 0% tax, mint revoked, LP burnt, pure memes and good vibes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
