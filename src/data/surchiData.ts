@@ -3,18 +3,26 @@ export const TOKEN_DETAILS = {
   name: 'SURCHI',
   blockchain: 'Solana',
   contractAddress: 'SURCHi1111111111111111111111111111111111111',
-  totalSupply: '2,100,000 $SUR',
+  totalSupply: '999,840,906 $SUR',
+  circulationSupply: '887,896,906 $SUR',
   tax: '0% / 0%',
   mintAuthority: 'Revoked',
   freezeAuthority: 'Revoked',
   liquidity: '100% Burnt',
   distribution: [
-    { label: 'Fair Launch', percentage: '60%', amount: '1,260,000 $SUR', color: '#0052FF' },
-    { label: 'Liquidity Pool', percentage: '30%', amount: '630,000 $SUR', color: '#00F7FF' },
-    { label: 'Listing & Marketing', percentage: '10%', amount: '210,000 $SUR', color: '#FFB800' },
+    { label: 'Fair Launch', percentage: '60%', amount: '599,904,544 $SUR', color: '#0052FF' },
+    { label: 'Liquidity Pool', percentage: '30%', amount: '299,952,272 $SUR', color: '#00F7FF' },
+    { label: 'Listing & Marketing', percentage: '10%', amount: '99,984,090 $SUR', color: '#FFB800' },
   ],
   explorerUrl: 'https://solscan.io/token/SURCHi1111111111111111111111111111111111111',
   swapUrl: 'https://raydium.io/swap/?inputMint=sol&outputMint=SURCHi1111111111111111111111111111111111111',
+};
+
+export const TRACKING_LINKS = {
+  coinmarketcap: 'https://coinmarketcap.com/currencies/surchi/',
+  coingecko: 'https://www.coingecko.com/en/coins/surchi',
+  dextools: 'https://www.dextools.io/app/en/solana/pair-explorer/SURCHi1111111111111111111111111111111111111',
+  dexscreener: 'https://dexscreener.com/solana/SURCHi1111111111111111111111111111111111111',
 };
 
 export const HOW_TO_BUY_STEPS = [

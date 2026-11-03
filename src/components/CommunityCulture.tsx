@@ -22,6 +22,11 @@ export const CommunityCulture: React.FC = () => {
       src: '/assets/aistudio/InShot_20261101_004340859_2a5fc1d4.mp4',
       altSources: ['/videos/surchi_flowers.mp4'],
     },
+    {
+      title: 'SURCHI Ocean Cliff',
+      src: '/assets/aistudio/InShot_20261101_202323031_65f39e4e.mp4',
+      altSources: [],
+    },
   ];
 
   useEffect(() => {
@@ -69,7 +74,7 @@ export const CommunityCulture: React.FC = () => {
 
       {/* Featured Videos (Spanning Side-by-Side Across Entire Website Just Like Header Section) */}
       <div className="relative w-full select-none px-0 mb-16 sm:mb-24 overflow-hidden">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 sm:gap-1 md:gap-2 lg:gap-3">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-1 md:gap-2 lg:gap-3">
           {FEATURED_VIDEOS.map((video, idx) => (
             <div
               key={idx}

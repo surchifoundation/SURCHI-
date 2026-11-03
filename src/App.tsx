@@ -11,6 +11,7 @@ import { Introduction } from './components/Introduction';
 import { TokenInfo } from './components/TokenInfo';
 import { HowToBuy } from './components/HowToBuy';
 import { ExchangesAndFutures } from './components/ExchangesAndFutures';
+import { ViewSurchiAt } from './components/ViewSurchiAt';
 import { DogsFamily } from './components/DogsFamily';
 import { CommunityCulture } from './components/CommunityCulture';
 import { CallToAction } from './components/CallToAction';
@@ -45,7 +46,10 @@ export default function App() {
         {/* Section F: Exchanges & Futures Listings */}
         <ExchangesAndFutures />
 
-        {/* Section G: Dogs Family (Meme Dynasty) */}
+        {/* Section G: View SURCHI At (CMC, CoinGecko, DEXTools, DEXScreener) */}
+        <ViewSurchiAt />
+
+        {/* Section H: Dogs Family (Meme Dynasty) */}
         <DogsFamily />
 
         {/* Section H: The SURCHI Meme Vault */}

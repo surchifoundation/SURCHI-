@@ -47,9 +47,8 @@ export const TokenInfo: React.FC = () => {
         <div className="w-full border-t border-white/40" />
 
         {/* 2-Column Grid with Thin Crisp Borders */}
+        {/* Row 1: NAME & TICKER */}
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          
-          {/* Row 1 Left: NAME */}
           <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               NAME
@@ -59,7 +58,6 @@ export const TokenInfo: React.FC = () => {
             </span>
           </div>
 
-          {/* Row 1 Right: TICKER */}
           <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               TICKER
@@ -70,8 +68,29 @@ export const TokenInfo: React.FC = () => {
           </div>
         </div>
 
+        {/* Row 2: TOTAL SUPPLY & CIRCULATION SUPPLY */}
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          {/* Row 2 Left: NETWORK */}
+          <div className="py-6 sm:py-8 md:pr-10">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
+              TOTAL SUPPLY
+            </span>
+            <span className="block text-2xl sm:text-4xl font-black tracking-tight text-white">
+              {TOKEN_DETAILS.totalSupply}
+            </span>
+          </div>
+
+          <div className="py-6 sm:py-8 md:pl-10">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
+              CIRCULATION SUPPLY
+            </span>
+            <span className="block text-2xl sm:text-4xl font-black tracking-tight text-[#00F7FF]">
+              {TOKEN_DETAILS.circulationSupply}
+            </span>
+          </div>
+        </div>
+
+        {/* Row 3: NETWORK & LISTING */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
           <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               NETWORK
@@ -81,20 +100,7 @@ export const TokenInfo: React.FC = () => {
             </span>
           </div>
 
-          {/* Row 2 Right: TOTAL SUPPLY */}
           <div className="py-6 sm:py-8 md:pl-10">
-            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
-              TOTAL SUPPLY
-            </span>
-            <span className="block text-2xl sm:text-4xl font-black tracking-tight text-white">
-              2,100,000 $SUR
-            </span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          {/* Row 3 Left: LISTING */}
-          <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               LISTING
             </span>
@@ -102,14 +108,25 @@ export const TokenInfo: React.FC = () => {
               Raydium / Coinbase
             </span>
           </div>
+        </div>
 
-          {/* Row 3 Right: TAX & LIQUIDITY */}
-          <div className="py-6 sm:py-8 md:pl-10">
+        {/* Row 4: TAX & LIQUIDITY & MINT AUTHORITY */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
+          <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               TAX & LIQUIDITY
             </span>
             <span className="block text-2xl sm:text-3xl font-black tracking-tight text-white">
               0% · 100% Burnt LP
+            </span>
+          </div>
+
+          <div className="py-6 sm:py-8 md:pl-10">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
+              MINT AUTHORITY
+            </span>
+            <span className="block text-2xl sm:text-3xl font-black tracking-tight text-white">
+              Revoked (Immutable)
             </span>
           </div>
         </div>

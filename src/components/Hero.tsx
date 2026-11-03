@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Copy, Check, ExternalLink, ArrowDown } from 'lucide-react';
 import { TOKEN_DETAILS, SOCIAL_LINKS } from '../data/surchiData';
+import { FlyingButterflies } from './FlyingButterflies';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -14,8 +15,11 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative w-full bg-[#0158ff] text-white pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 overflow-hidden flex flex-col items-center justify-between min-h-[92vh]">
       
+      {/* Realistic Colorful Flying Butterflies Layer */}
+      <FlyingButterflies />
+
       {/* Top Header Block: Wordmark & 'NOW ON coinbase' */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10 select-none">
         
         {/* Massive Chunky Wordmark */}
         <h1 className="text-7xl sm:text-9xl md:text-[11rem] lg:text-[13rem] font-['Rubik_Mono_One',sans-serif] text-white tracking-normal uppercase leading-none select-none drop-shadow-sm">
@@ -28,7 +32,7 @@ export const Hero: React.FC = () => {
             NOW ON
           </span>
           <span className="text-2xl sm:text-4xl md:text-5xl font-black lowercase tracking-tighter text-white flex items-center gap-1.5">
-            <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#0158ff] text-xs sm:text-base font-black">
+            <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#0158ff] text-xs sm:text-base font-black shadow-sm">
               C
             </span>
             <span>coinbase</span>
@@ -37,15 +41,12 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Mascot Photo - Spanning Side-by-Side of Website with Container Completely Removed */}
-      <div className="relative w-full flex items-end justify-center select-none px-0 mt-3 sm:mt-6 z-10">
-        <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl aspect-[3/4] max-h-[70vh] sm:max-h-[78vh] relative overflow-hidden select-none flex items-end justify-center">
-          <img
-            src="/images/surchi_hero_toshi.jpg"
-            alt="SURCHI Mascot"
-            className="w-full h-full object-cover sm:object-contain object-bottom select-none pointer-events-none"
-          />
-        </div>
+      {/* Returned Original Space for the Header Image (Without Any Image Rendered) */}
+      <div
+        aria-hidden="true"
+        className="relative w-full flex items-end justify-center select-none px-0 mt-3 sm:mt-6 z-10 pointer-events-none"
+      >
+        <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl aspect-[3/4] max-h-[70vh] sm:max-h-[78vh] relative" />
       </div>
 
       {/* Bottom Action Bar, Contract Address & Quick Metrics */}

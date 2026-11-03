@@ -44,6 +44,12 @@ export const Navbar: React.FC = () => {
             Exchanges
           </a>
           <a
+            href="#view-surchi"
+            className="hover:text-[#00F7FF] transition-colors whitespace-nowrap shrink-0 py-1"
+          >
+            Charts
+          </a>
+          <a
             href="#dogs-family"
             className="hover:text-[#00F7FF] transition-colors whitespace-nowrap shrink-0 py-1"
           >
@@ -142,6 +148,13 @@ export const Navbar: React.FC = () => {
               className="py-2 hover:text-white/80 transition-colors"
             >
               Exchanges
+            </a>
+            <a
+              href="#view-surchi"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 hover:text-[#00F7FF] transition-colors"
+            >
+              View SURCHI At
             </a>
             <a
               href="#dogs-family"
