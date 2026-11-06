@@ -129,13 +129,6 @@ export const ViewSurchiAt: React.FC = () => {
               Track live $SUR charts, market cap, liquidity, order books, and real-time Solana DEX volume on the top crypto analytics platforms.
             </p>
           </div>
-
-          <div className="flex items-center gap-3 self-start md:self-auto">
-            <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white/80 flex items-center gap-2 select-none">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Live Chart Sync</span>
-            </div>
-          </div>
         </div>
 
         {/* 4 Blue Platform Containers (DEXScreener, DEXTools, CoinGecko, CoinMarketCap) on Black Background */}

@@ -33,6 +33,19 @@
     animation: floatSlow 5s ease-in-out infinite;
   }
 
+  @keyframes bubbleFloat {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-8px) scale(1.02);
+    }
+  }
+
+  .animate-bubble-float {
+    animation: bubbleFloat 4s ease-in-out infinite;
+  }
+
   .font-mono-data {
     font-family: 'JetBrains Mono', monospace;
     font-variant-numeric: tabular-nums;

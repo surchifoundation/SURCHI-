@@ -163,14 +163,25 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Footer Bottom Row */}
-        <div className="pt-8 text-xs font-mono text-white/40">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© {new Date().getFullYear()} SURCHI Community. All rights reserved.</p>
-            <div className="flex items-center gap-4">
-              <span>Solana Blockchain</span>
-              <span aria-hidden="true">·</span>
-              <span>100% Community Driven</span>
+        {/* Footer Bottom Row - Organized & Spaced */}
+        <div className="pt-10 pb-2 text-xs font-mono">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <p className="text-white/65 tracking-wide font-normal">
+              © 2027 SURCHI Community. All rights reserved.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/55">
+              <span className="hover:text-white transition-colors">
+                Solana Blockchain.
+              </span>
+              <span className="text-white/25 select-none hidden sm:inline" aria-hidden="true">•</span>
+              <span className="hover:text-white transition-colors">
+                100% Community Driven.
+              </span>
+              <span className="text-white/25 select-none hidden sm:inline" aria-hidden="true">•</span>
+              <span className="text-white/85 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                Crafted with <span className="text-[#FF4B72]">❤️</span>
+              </span>
             </div>
           </div>
         </div>

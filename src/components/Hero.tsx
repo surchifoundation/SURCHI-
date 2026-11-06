@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Copy, Check, ExternalLink, ArrowDown } from 'lucide-react';
 import { TOKEN_DETAILS, SOCIAL_LINKS } from '../data/surchiData';
-import { FlyingButterflies } from './FlyingButterflies';
+import { MascotHorizontalShowcase } from './MascotHorizontalShowcase';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -14,9 +14,6 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative w-full bg-[#0158ff] text-white pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 overflow-hidden flex flex-col items-center justify-between min-h-[92vh]">
-      
-      {/* Realistic Colorful Flying Butterflies Layer */}
-      <FlyingButterflies />
 
       {/* Top Header Block: Wordmark & 'NOW ON coinbase' */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10 select-none">
@@ -27,7 +24,7 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* 'NOW ON coinbase' */}
-        <div className="flex items-center justify-center gap-2 sm:gap-3 mt-1 sm:mt-3 select-none">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mt-1 sm:mt-2 select-none">
           <span className="text-sm sm:text-lg md:text-xl font-bold tracking-[0.2em] uppercase text-white/95">
             NOW ON
           </span>
@@ -41,16 +38,11 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Returned Original Space for the Header Image (Without Any Image Rendered) */}
-      <div
-        aria-hidden="true"
-        className="relative w-full flex items-end justify-center select-none px-0 mt-3 sm:mt-6 z-10 pointer-events-none"
-      >
-        <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl aspect-[3/4] max-h-[70vh] sm:max-h-[78vh] relative" />
-      </div>
+      {/* Horizontal Display of Pure Surchi Artwork (Zero Text) */}
+      <MascotHorizontalShowcase />
 
       {/* Bottom Action Bar, Contract Address & Quick Metrics */}
-      <div className="w-full max-w-4xl mx-auto px-4 mt-6 sm:mt-8 flex flex-col items-center gap-4 z-10">
+      <div className="w-full max-w-4xl mx-auto px-4 mt-4 sm:mt-6 flex flex-col items-center gap-4 z-10">
         
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
