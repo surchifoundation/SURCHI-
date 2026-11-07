@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { TOKEN_DETAILS, SOCIAL_LINKS } from '../data/surchiData';
+import { useLiveSurPrice } from '../utils/tokenPrice';
 import { Copy, Check, ExternalLink } from 'lucide-react';
 
 export const TokenInfo: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { price } = useLiveSurPrice();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(TOKEN_DETAILS.contractAddress);
@@ -68,9 +70,31 @@ export const TokenInfo: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 2: TOTAL SUPPLY & CIRCULATION SUPPLY */}
+        {/* Row 2: SUR PRICE & TOTAL SUPPLY */}
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
           <div className="py-6 sm:py-8 md:pr-10">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-[#00F7FF] mb-2 flex items-center gap-2">
+              <span>SUR PRICE</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F7FF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F7FF]"></span>
+              </span>
+            </span>
+            <div className="min-h-[2rem] sm:min-h-[2.5rem] flex items-center">
+              {price ? (
+                <span className="text-2xl sm:text-4xl font-black tracking-tight text-[#00F7FF] font-mono-data">
+                  {price}
+                </span>
+              ) : (
+                <span className="relative flex h-3.5 w-3.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F7FF] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#00F7FF]"></span>
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               TOTAL SUPPLY
             </span>
@@ -78,8 +102,11 @@ export const TokenInfo: React.FC = () => {
               {TOKEN_DETAILS.totalSupply}
             </span>
           </div>
+        </div>
 
-          <div className="py-6 sm:py-8 md:pl-10">
+        {/* Row 3: CIRCULATION SUPPLY & NETWORK */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
+          <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               CIRCULATION SUPPLY
             </span>
@@ -87,11 +114,8 @@ export const TokenInfo: React.FC = () => {
               {TOKEN_DETAILS.circulationSupply}
             </span>
           </div>
-        </div>
 
-        {/* Row 3: NETWORK & LISTING */}
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          <div className="py-6 sm:py-8 md:pr-10">
+          <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               NETWORK
             </span>
@@ -99,8 +123,11 @@ export const TokenInfo: React.FC = () => {
               Solana
             </span>
           </div>
+        </div>
 
-          <div className="py-6 sm:py-8 md:pl-10">
+        {/* Row 4: LISTING & TAX */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
+          <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               LISTING
             </span>
@@ -108,11 +135,8 @@ export const TokenInfo: React.FC = () => {
               Raydium / Coinbase
             </span>
           </div>
-        </div>
 
-        {/* Row 4: TAX & LIQUIDITY & MINT AUTHORITY */}
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          <div className="py-6 sm:py-8 md:pr-10">
+          <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               TAX & LIQUIDITY
             </span>
@@ -120,10 +144,22 @@ export const TokenInfo: React.FC = () => {
               0% · 100% Burnt LP
             </span>
           </div>
+        </div>
+
+        {/* Row 5: MINT AUTHORITY & FREEZE AUTHORITY */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
+          <div className="py-6 sm:py-8 md:pr-10">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
+              MINT AUTHORITY
+            </span>
+            <span className="block text-2xl sm:text-3xl font-black tracking-tight text-white">
+              Revoked (Immutable)
+            </span>
+          </div>
 
           <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
-              MINT AUTHORITY
+              FREEZE AUTHORITY
             </span>
             <span className="block text-2xl sm:text-3xl font-black tracking-tight text-white">
               Revoked (Immutable)
