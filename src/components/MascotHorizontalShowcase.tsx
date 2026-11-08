@@ -31,29 +31,37 @@ const MASCOT_ITEMS: MascotItem[] = [
 
 export const MascotHorizontalShowcase: React.FC = () => {
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 sm:my-6 z-10 select-none">
+    <div className="relative w-full max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-2 sm:my-3 lg:my-4 z-10 select-none">
       
-      {/* Horizontal Display Track with Surchi Artwork - Highly Visible & Bold */}
+      {/* 
+        Responsive Showcase Container:
+        - Mobile (< 768px): Fluid horizontal scroll track preserving touch swipe
+        - Tablet (>= 768px) & Desktop (>= 1024px): 4-column side-by-side grid with consistent dimensions and balanced spacing
+      */}
       <div
-        className="flex items-center justify-start lg:justify-center gap-6 sm:gap-8 overflow-x-auto scrollbar-none scroll-smooth py-6 px-4"
+        className="flex items-center justify-start sm:justify-center md:grid md:grid-cols-4 gap-3 sm:gap-4 md:gap-4 lg:gap-5 xl:gap-6 overflow-x-auto md:overflow-visible scrollbar-none py-2 px-2 md:px-0 md:justify-items-center"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
         }}
       >
         {MASCOT_ITEMS.map((item) => (
-          <img
+          <div
             key={item.id}
-            src={item.image}
-            alt={item.alt}
-            className="h-[300px] sm:h-[360px] md:h-[420px] lg:h-[460px] w-auto shrink-0 object-contain object-center select-none pointer-events-none hover:scale-105 transition-all duration-300 drop-shadow-[0_14px_28px_rgba(0,0,0,0.22)]"
-            style={{
-              maskImage: 'radial-gradient(ellipse 96% 96% at center, black 92%, transparent 100%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 96% 96% at center, black 92%, transparent 100%)',
-              transform: 'translateZ(0)',
-            }}
-            loading="lazy"
-          />
+            className="shrink-0 w-[170px] sm:w-[210px] md:w-full md:max-w-[170px] lg:max-w-[230px] xl:max-w-[260px] aspect-square flex items-center justify-center"
+          >
+            <img
+              src={item.image}
+              alt={item.alt}
+              className="w-full h-full object-contain object-center select-none pointer-events-none hover:scale-105 transition-transform duration-300 drop-shadow-[0_12px_24px_rgba(0,0,0,0.22)]"
+              style={{
+                maskImage: 'radial-gradient(ellipse 96% 96% at center, black 92%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 96% 96% at center, black 92%, transparent 100%)',
+                transform: 'translateZ(0)',
+              }}
+              loading="eager"
+            />
+          </div>
         ))}
       </div>
 
