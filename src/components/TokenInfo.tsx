@@ -104,7 +104,7 @@ export const TokenInfo: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 3: CIRCULATION SUPPLY & NETWORK */}
+        {/* Row 3: CIRCULATION SUPPLY & PRIMARY LIQUIDITY POOL SUPPLY */}
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
           <div className="py-6 sm:py-8 md:pr-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
@@ -117,26 +117,26 @@ export const TokenInfo: React.FC = () => {
 
           <div className="py-6 sm:py-8 md:pl-10">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
-              NETWORK
-            </span>
-            <span className="block text-2xl sm:text-4xl font-black tracking-tight text-white">
-              Solana
-            </span>
-          </div>
-        </div>
-
-        {/* Row 4: PRIMARY LIQUIDITY POOL SUPPLY & SECONDARY LIQUIDITY POOL SUPPLY */}
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
-          <div className="py-6 sm:py-8 md:pr-10">
-            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               PRIMARY LIQUIDITY POOL SUPPLY
             </span>
             <span className="block text-2xl sm:text-4xl font-black tracking-tight text-white">
               {TOKEN_DETAILS.primaryLiquidityPoolSupply}
             </span>
           </div>
+        </div>
 
-          <div className="py-6 sm:py-8 md:pl-10">
+        {/* Row 4: NETWORK & SECONDARY LIQUIDITY POOL SUPPLY (NETWORK placed directly above LISTING) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/40 border-b border-white/40">
+          <div className="py-6 sm:py-8 md:pr-10 order-2 md:order-1">
+            <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
+              NETWORK
+            </span>
+            <span className="block text-2xl sm:text-4xl font-black tracking-tight text-white">
+              Solana
+            </span>
+          </div>
+
+          <div className="py-6 sm:py-8 md:pl-10 order-1 md:order-2">
             <span className="block text-xs font-mono font-bold uppercase tracking-widest text-white/70 mb-2">
               SECONDARY LIQUIDITY POOL SUPPLY
             </span>
