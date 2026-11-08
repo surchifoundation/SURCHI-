@@ -18,39 +18,14 @@ const MASCOT_ITEMS: MascotItem[] = [
     alt: 'The Surchi Smirk Streetwear Mascot',
   },
   {
-    id: 'diamond-paws',
-    image: '/images/surchi_diamond_paws.jpg',
-    alt: 'Surchi Diamond Paws Solana Gem',
-  },
-  {
-    id: 'dex-trader',
-    image: '/images/surchi_dex_trader.jpg',
-    alt: 'Surchi DEX Charts Live Trader Mascot',
-  },
-  {
     id: 'moon-rocket',
     image: '/images/surchi_moon_rocket.jpg',
     alt: 'PUP-1 Moon Rocket Cosmic Pup',
   },
   {
-    id: 'mobile-swap',
-    image: '/images/surchi_mobile_swap.jpg',
-    alt: 'Surchi Mobile Solana Swap Mascot',
-  },
-  {
     id: 'deep-research',
     image: '/images/surchi_reading_bedtime.jpg',
     alt: 'Deep Research Crypto Bedtime Stories',
-  },
-  {
-    id: 'community-pack',
-    image: '/images/surchi_community_pack.jpg',
-    alt: 'Surchi Community Megaphone Mascot',
-  },
-  {
-    id: 'scholar-graduate',
-    image: '/images/surchi_scholar_graduate.jpg',
-    alt: 'Surchi Scholar Blockchain Graduate Mascot',
   },
 ];
 
@@ -60,7 +35,7 @@ export const MascotHorizontalShowcase: React.FC = () => {
       
       {/* Horizontal Display Track with Surchi Artwork - Highly Visible & Bold */}
       <div
-        className="flex items-center gap-6 sm:gap-8 overflow-x-auto scrollbar-none scroll-smooth py-6 px-4"
+        className="flex items-center justify-start lg:justify-center gap-6 sm:gap-8 overflow-x-auto scrollbar-none scroll-smooth py-6 px-4"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
