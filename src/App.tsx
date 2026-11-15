@@ -9,6 +9,7 @@ import { Hero } from './components/Hero';
 import { BrandMarquee } from './components/BrandMarquee';
 import { Introduction } from './components/Introduction';
 import { TokenInfo } from './components/TokenInfo';
+import { SurchiBurn } from './components/SurchiBurn';
 import { HowToBuy } from './components/HowToBuy';
 import { ExchangesAndFutures } from './components/ExchangesAndFutures';
 import { ViewSurchiAt } from './components/ViewSurchiAt';
@@ -39,6 +40,9 @@ export default function App() {
 
         {/* Section D: Meme-o-nomics (Taxes, Supply, Burnt LP) */}
         <TokenInfo />
+
+        {/* Section D2: The SURCHI Burn? */}
+        <SurchiBurn />
 
         {/* Section E: How to Buy $SUR */}
         <HowToBuy />

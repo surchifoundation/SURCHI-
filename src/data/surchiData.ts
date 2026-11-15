@@ -80,6 +80,6 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/surchiai',
   solscan: 'https://solscan.io/token/SURCHi1111111111111111111111111111111111111',
   raydium: 'https://raydium.io/swap/?inputMint=sol&outputMint=SURCHi1111111111111111111111111111111111111',
-  email: 'info@surchi.xyz',
+  email: 'support@surchi.xyz',
 };
 
