@@ -45,10 +45,10 @@ export const SurchiBurn: React.FC = () => {
             <div className="lg:col-span-5 pt-6 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-10 space-y-6">
               <div className="space-y-1.5">
                 <p className="text-3xl sm:text-4xl font-black tracking-tight text-white font-mono-data">
-                  560,000 $SUR
+                  420k $SUR
                 </p>
                 <p className="text-2xl sm:text-3xl font-black tracking-tight text-[#00F7FF] font-mono-data">
-                  $50,5000
+                  $1M
                 </p>
                 <span className="block pt-1 text-xs font-mono font-bold uppercase tracking-[0.2em] text-white/60">
                   HER SUR + HER LP SHARE
