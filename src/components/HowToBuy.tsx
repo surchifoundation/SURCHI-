@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HOW_TO_BUY_STEPS, TOKEN_DETAILS } from '../data/surchiData';
-import { Wallet, Coins, ArrowRightLeft, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Wallet, Coins, ArrowRightLeft, CheckCircle2, ExternalLink, Copy, Check } from 'lucide-react';
 
 export const HowToBuy: React.FC = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(TOKEN_DETAILS.contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const getStepIcon = (index: number) => {
     switch (index) {
       case 0:
@@ -60,6 +68,22 @@ export const HowToBuy: React.FC = () => {
                 <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                   {step.description}
                 </p>
+
+                {idx === 3 && (
+                  <div className="mt-4 bg-black/50 border border-white/10 rounded-xl px-3 py-2 flex items-center justify-between gap-2">
+                    <span className="font-mono text-[11px] text-[#00F7FF] truncate select-all">
+                      {TOKEN_DETAILS.contractAddress}
+                    </span>
+                    <button
+                      onClick={handleCopy}
+                      type="button"
+                      aria-label="Copy $SUR contract address"
+                      className="text-white/80 hover:text-[#00F7FF] transition-colors shrink-0 cursor-pointer"
+                    >
+                      {copied ? <Check className="w-3.5 h-3.5 text-[#00FF99]" /> : <Copy className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/5 text-[11px] font-mono text-white/40">
@@ -70,13 +94,16 @@ export const HowToBuy: React.FC = () => {
         </div>
 
         {/* Quick Swap CTA Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#0647FF] border border-white/20 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div>
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#0647FF] border border-white/20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-2xl">
+          <div className="min-w-0 flex-1">
             <h4 className="text-xl sm:text-2xl font-black uppercase text-white">
               Ready to Swap on Raydium?
             </h4>
             <p className="text-xs sm:text-sm text-white/85 mt-1">
               Have your SOL ready in Phantom or Solflare and swap directly for $SUR with zero tax.
+            </p>
+            <p className="mt-2 font-mono text-xs text-[#00F7FF] break-all select-all">
+              CA: {TOKEN_DETAILS.contractAddress}
             </p>
           </div>
 
@@ -84,7 +111,7 @@ export const HowToBuy: React.FC = () => {
             href={TOKEN_DETAILS.swapUrl}
             target="_blank"
             rel="noreferrer"
-            className="px-8 py-3.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider bg-white hover:bg-[#00F7FF] text-[#0647FF] hover:text-[#05070B] transition-all shadow-lg whitespace-nowrap flex items-center gap-2"
+            className="px-8 py-3.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider bg-white hover:bg-[#00F7FF] text-[#0647FF] hover:text-[#05070B] transition-all shadow-lg whitespace-nowrap flex items-center gap-2 shrink-0"
           >
             <span>Open Raydium Swap</span>
             <ExternalLink className="w-4 h-4" />

@@ -2,27 +2,27 @@ export const TOKEN_DETAILS = {
   ticker: '$SUR',
   name: 'SURCHI',
   blockchain: 'Solana',
-  contractAddress: 'SURCHi1111111111111111111111111111111111111',
+  contractAddress: 'DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
   totalSupply: '2,100,000 $SUR',
-  circulationSupply: '1,680,000 $SUR',
-  liquidityPoolSupply: '420,000 $SUR',
+  circulationSupply: '2,100,000 $SUR',
+  liquidityPoolSupply: '630,000 $SUR',
   tax: '0% / 0%',
   mintAuthority: 'Revoked',
   freezeAuthority: 'Revoked',
   liquidity: '100% Burnt',
   distribution: [
-    { label: 'Circulating Supply', percentage: '80%', amount: '1,680,000 $SUR', color: '#0052FF' },
-    { label: 'Liquidity Pool', percentage: '20%', amount: '420,000 $SUR', color: '#00F7FF' },
+    { label: 'Circulating Supply', percentage: '100%', amount: '2,100,000 $SUR', color: '#0052FF' },
+    { label: 'Liquidity Pool', percentage: '30%', amount: '630,000 $SUR', color: '#00F7FF' },
   ],
-  explorerUrl: 'https://solscan.io/token/SURCHi1111111111111111111111111111111111111',
-  swapUrl: 'https://raydium.io/swap/?inputMint=sol&outputMint=SURCHi1111111111111111111111111111111111111',
+  explorerUrl: 'https://solscan.io/token/DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
+  swapUrl: 'https://raydium.io/swap/?inputMint=sol&outputMint=DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
 };
 
 export const TRACKING_LINKS = {
   coinmarketcap: 'https://coinmarketcap.com/currencies/surchi/',
   coingecko: 'https://www.coingecko.com/en/coins/surchi',
-  dextools: 'https://www.dextools.io/app/en/solana/pair-explorer/SURCHi1111111111111111111111111111111111111',
-  dexscreener: 'https://dexscreener.com/solana/SURCHi1111111111111111111111111111111111111',
+  dextools: 'https://www.dextools.io/app/en/solana/pair-explorer/DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
+  dexscreener: 'https://dexscreener.com/solana/DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
 };
 
 export const HOW_TO_BUY_STEPS = [
@@ -76,8 +76,8 @@ export const SOCIAL_LINKS = {
   x: 'https://x.com/Sur2027',
   discord: 'https://discord.gg/uH2Jp3yu5h',
   github: 'https://github.com/surchiai',
-  solscan: 'https://solscan.io/token/SURCHi1111111111111111111111111111111111111',
-  raydium: 'https://raydium.io/swap/?inputMint=sol&outputMint=SURCHi1111111111111111111111111111111111111',
+  solscan: 'https://solscan.io/token/DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
+  raydium: 'https://raydium.io/swap/?inputMint=sol&outputMint=DCHLn5uLCDjPcmyxqeV3EFA1hAT518RR3u7gQe8iUiYQ',
   email: 'support@surchi.xyz',
 };
 
