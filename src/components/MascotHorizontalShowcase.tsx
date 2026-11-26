@@ -5,24 +5,20 @@ import surchiRocketImg from '../assets/images/surchi_rocket_notext_1794751407920
 interface MascotItem {
   id: string;
   image: string;
-  alt: string;
 }
 
 const MASCOT_ITEMS: MascotItem[] = [
   {
     id: 'coins-mascot',
     image: surchiCoinsImg,
-    alt: 'Surchi Mascot Holding Glowing Tokens',
   },
   {
     id: 'cool-smirk',
     image: '/images/surchi_cool_smirk.jpg',
-    alt: 'The Surchi Smirk Streetwear Mascot',
   },
   {
     id: 'moon-rocket',
     image: surchiRocketImg,
-    alt: 'Surchi Riding Rocket To The Moon',
   },
 ];
 
@@ -49,7 +45,8 @@ export const MascotHorizontalShowcase: React.FC = () => {
           >
             <img
               src={item.image}
-              alt={item.alt}
+              alt=""
+              aria-hidden="true"
               referrerPolicy="no-referrer"
               className="w-full h-full object-contain object-center select-none pointer-events-none hover:scale-105 transition-transform duration-300 drop-shadow-[0_12px_24px_rgba(0,0,0,0.22)]"
               style={{
@@ -58,6 +55,7 @@ export const MascotHorizontalShowcase: React.FC = () => {
                 transform: 'translateZ(0)',
               }}
               loading="eager"
+              fetchPriority="high"
             />
           </div>
         ))}
